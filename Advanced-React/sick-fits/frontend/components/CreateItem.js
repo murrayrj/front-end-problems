@@ -55,7 +55,6 @@ class CreateItem extends Component {
       }
     );
     const file = await response.json();
-    console.log(file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url,
@@ -70,11 +69,11 @@ class CreateItem extends Component {
             onSubmit={async e => {
               e.preventDefault();
               const response = await createItem();
-              // Router.push({
-              //   pathname: '/item',
-              //   query: { id: response.data.createItem.id },
-              // });
               console.log(response);
+              Router.push({
+                pathname: '/item',
+                query: { id: response.data.createItem.id },
+              });
             }}
           >
             <ErrorMessage error={error} />

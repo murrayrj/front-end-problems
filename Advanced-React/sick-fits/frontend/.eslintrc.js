@@ -86,6 +86,7 @@ module.exports = {
     'react/state-in-constructor': 0,
     'react/destructuring-assignment': 0,
     'react/jsx-props-no-spreading': 0,
+    'react/static-property-placement': 0,
     'react/jsx-filename-extension': [
       1,
       {
