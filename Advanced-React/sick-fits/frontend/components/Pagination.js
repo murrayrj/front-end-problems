@@ -3,9 +3,9 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Head from 'next/head';
 import Link from 'next/link';
+import PaginationStyles from './styles/PaginationStyles';
 import { perPage } from '../config';
 import Error from './ErrorMessage';
-import PaginationStyles from './styles/PaginationStyles';
 
 const PAGINATION_QUERY = gql`
   query PAGINATION_QUERY {
@@ -26,7 +26,7 @@ const Pagination = props => (
       const pages = Math.ceil(count / perPage);
       const { page } = props;
       return (
-        <PaginationStyles>
+        <PaginationStyles data-test="pagination">
           <Head>
             <title>
               Sick Fits! — Page {page} of {pages}
